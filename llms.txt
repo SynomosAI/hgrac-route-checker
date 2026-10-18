@@ -1,0 +1,34 @@
+# hgrac-route-checker
+
+> 生物 · 人类遗传资源（HGRAC）域的「行业接入四件套」骨架：把「这类人类遗传资源活动要不要报、报哪条路」拆成可核验属性，核验器只出示与核验，不下审批结论。状态 RESERVED，开放给具备资质的运营方认领。
+
+`hgrac-route-checker` 是一个 domain profile（域声明）仓，domain_id=`bio`，profile_version=`domain/1.0`。它不提供可运行服务，资产是四份机器可读 JSON：域声明、摩擦分级、隐私声明、核验器 IO 契约。
+
+## 核心文件
+
+- [domain.manifest.json](domain.manifest.json): 本域声明（属性清单 / 签发方要求 / 有效期 / 红线）
+- [gate-map.json](gate-map.json): 本域摩擦分级 silent/warn/confirm/block/require-owner
+- [privacy.json](privacy.json): 本域隐私声明（默认关闭 / 最小必要 / 可撤回 / 可删除）
+- [checker.io.json](checker.io.json): 本域核验器（MCP 工具）IO 契约，只出示不下判定
+- [README.md](README.md): 项目说明、快速开始与属性清单（中文）
+- [README.en.md](README.en.md): English README
+
+## 可选
+
+- [LICENSE](LICENSE): MIT License（© 2026 SynomosAI）
+- [CODEOWNERS](CODEOWNERS): @SynomosAI/synomosai-gov
+- [SECURITY.md](SECURITY.md): 安全策略与报告途径
+- [AGENTS.md](AGENTS.md): 给 AI Agent 的工作指引
+- [llms-full.txt](llms-full.txt): 本仓完整说明（llms.txt 完整版）
+
+## 本域属性（5 个）
+
+- `bio.hgrac_activity`：活动类型（collection/preservation/utilization/provision_abroad/open_access）
+- `bio.hgrac_approval_status`：行政许可当前状态（not_required/pending/approved/rejected/expired/unknown）
+- `bio.entity_qualification`：中方单位资格与外方主体性质（qualified/unqualified/foreign_entity/under_review）
+- `bio.resource_type`：资源形态（organ/tissue/cell/blood/genetic_data/other）
+- `bio.biosafety_level`：实验室生物安全等级（bsl1/bsl2/bsl3/bsl4/not_applicable）
+
+## 链接
+
+- 仓库: https://github.com/SynomosAI/hgrac-route-checker
